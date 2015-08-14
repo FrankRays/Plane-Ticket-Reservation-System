@@ -40,6 +40,18 @@
             this.departTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arriveTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPlaneCode = new System.Windows.Forms.TextBox();
+            this.txtOrigin = new System.Windows.Forms.TextBox();
+            this.txtDest = new System.Windows.Forms.TextBox();
+            this.txtDepTime = new System.Windows.Forms.TextBox();
+            this.txtArrTime = new System.Windows.Forms.TextBox();
+            this.txtPrices = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.airCraftBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSet)).BeginInit();
@@ -79,11 +91,12 @@
             this.arriveTimeDataGridViewTextBoxColumn,
             this.pricesDataGridViewTextBoxColumn});
             this.TripGridView.DataSource = this.airCraftBindingSource;
-            this.TripGridView.Location = new System.Drawing.Point(76, 68);
+            this.TripGridView.Location = new System.Drawing.Point(12, 12);
             this.TripGridView.Name = "TripGridView";
             this.TripGridView.ReadOnly = true;
-            this.TripGridView.Size = new System.Drawing.Size(701, 150);
+            this.TripGridView.Size = new System.Drawing.Size(732, 150);
             this.TripGridView.TabIndex = 0;
+            this.TripGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TripGridView_CellContentClick);
             // 
             // planeCodeDataGridViewTextBoxColumn
             // 
@@ -127,11 +140,119 @@
             this.pricesDataGridViewTextBoxColumn.Name = "pricesDataGridViewTextBoxColumn";
             this.pricesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "PlaneCode";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 215);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Origin";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 242);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Destination";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 271);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Depart Time";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 300);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Arrive Time";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 331);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Prices";
+            // 
+            // txtPlaneCode
+            // 
+            this.txtPlaneCode.Location = new System.Drawing.Point(127, 180);
+            this.txtPlaneCode.Name = "txtPlaneCode";
+            this.txtPlaneCode.Size = new System.Drawing.Size(100, 20);
+            this.txtPlaneCode.TabIndex = 7;
+            // 
+            // txtOrigin
+            // 
+            this.txtOrigin.Location = new System.Drawing.Point(127, 215);
+            this.txtOrigin.Name = "txtOrigin";
+            this.txtOrigin.Size = new System.Drawing.Size(100, 20);
+            this.txtOrigin.TabIndex = 8;
+            // 
+            // txtDest
+            // 
+            this.txtDest.Location = new System.Drawing.Point(127, 242);
+            this.txtDest.Name = "txtDest";
+            this.txtDest.Size = new System.Drawing.Size(100, 20);
+            this.txtDest.TabIndex = 9;
+            // 
+            // txtDepTime
+            // 
+            this.txtDepTime.Location = new System.Drawing.Point(127, 271);
+            this.txtDepTime.Name = "txtDepTime";
+            this.txtDepTime.Size = new System.Drawing.Size(100, 20);
+            this.txtDepTime.TabIndex = 10;
+            // 
+            // txtArrTime
+            // 
+            this.txtArrTime.Location = new System.Drawing.Point(127, 300);
+            this.txtArrTime.Name = "txtArrTime";
+            this.txtArrTime.Size = new System.Drawing.Size(100, 20);
+            this.txtArrTime.TabIndex = 11;
+            // 
+            // txtPrices
+            // 
+            this.txtPrices.Location = new System.Drawing.Point(127, 331);
+            this.txtPrices.Name = "txtPrices";
+            this.txtPrices.Size = new System.Drawing.Size(100, 20);
+            this.txtPrices.TabIndex = 12;
+            // 
             // ReserveMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 430);
+            this.Controls.Add(this.txtPrices);
+            this.Controls.Add(this.txtArrTime);
+            this.Controls.Add(this.txtDepTime);
+            this.Controls.Add(this.txtDest);
+            this.Controls.Add(this.txtOrigin);
+            this.Controls.Add(this.txtPlaneCode);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TripGridView);
             this.Name = "ReserveMenu";
             this.Text = "ReserveMenu";
@@ -141,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TripGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,5 +278,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn departTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arriveTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pricesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPlaneCode;
+        private System.Windows.Forms.TextBox txtOrigin;
+        private System.Windows.Forms.TextBox txtDest;
+        private System.Windows.Forms.TextBox txtDepTime;
+        private System.Windows.Forms.TextBox txtArrTime;
+        private System.Windows.Forms.TextBox txtPrices;
     }
 }
