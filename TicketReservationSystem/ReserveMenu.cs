@@ -30,17 +30,43 @@ namespace TicketReservationSystem
         private void ReserveMenu_Load(object sender, EventArgs e)
         {
 
-            
-
-
             MessageBox.Show("Welcome " + this.custName + " !");
 
 
+            AirAsianDataBase = new OleDbConnection(connectionString);
+
+            AirAsianDataBase.Open();
+
+            string strSelect = "Select * from AirCraft";
+
+            TripGridView.DataSource = null;
+            TripGridView.Rows.Clear();
+            TripGridView.Refresh();
+
+            OleDbDataAdapter da = new OleDbDataAdapter( strSelect, AirAsianDataBase);
+            OleDbCommandBuilder cBuilder = new OleDbCommandBuilder(da);
+            DataTable dataTable = new DataTable();
+            da.Fill(dataTable);
+
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                TripGridView.Rows.Add(
+                    dataTable.Rows[i][0],
+                    dataTable.Rows[i][1],
+                    dataTable.Rows[i][2],
+                    dataTable.Rows[i][3],
+                    dataTable.Rows[i][4],
+                    dataTable.Rows[i][5]);
+            }
+
+            AirAsianDataBase.Close();
+
+
+
+
+
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
     }
 }

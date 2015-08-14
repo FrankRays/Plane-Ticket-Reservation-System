@@ -33,7 +33,7 @@
             this.airAsianDataBaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airAsianDataBaseDataSet = new TicketReservationSystem.AirAsianDataBaseDataSet();
             this.airCraftTableAdapter = new TicketReservationSystem.AirAsianDataBaseDataSetTableAdapters.AirCraftTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TripGridView = new System.Windows.Forms.DataGridView();
             this.planeCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.originDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.airCraftBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TripGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // airCraftBindingSource
@@ -65,72 +65,81 @@
             // 
             this.airCraftTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // TripGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TripGridView.AllowUserToAddRows = false;
+            this.TripGridView.AllowUserToDeleteRows = false;
+            this.TripGridView.AutoGenerateColumns = false;
+            this.TripGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TripGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.planeCodeDataGridViewTextBoxColumn,
             this.originDataGridViewTextBoxColumn,
             this.destinationDataGridViewTextBoxColumn,
             this.departTimeDataGridViewTextBoxColumn,
             this.arriveTimeDataGridViewTextBoxColumn,
             this.pricesDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.airCraftBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(50, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(633, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.TripGridView.DataSource = this.airCraftBindingSource;
+            this.TripGridView.Location = new System.Drawing.Point(76, 68);
+            this.TripGridView.Name = "TripGridView";
+            this.TripGridView.ReadOnly = true;
+            this.TripGridView.Size = new System.Drawing.Size(701, 150);
+            this.TripGridView.TabIndex = 0;
             // 
             // planeCodeDataGridViewTextBoxColumn
             // 
             this.planeCodeDataGridViewTextBoxColumn.DataPropertyName = "PlaneCode";
             this.planeCodeDataGridViewTextBoxColumn.HeaderText = "PlaneCode";
             this.planeCodeDataGridViewTextBoxColumn.Name = "planeCodeDataGridViewTextBoxColumn";
+            this.planeCodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // originDataGridViewTextBoxColumn
             // 
             this.originDataGridViewTextBoxColumn.DataPropertyName = "Origin";
             this.originDataGridViewTextBoxColumn.HeaderText = "Origin";
             this.originDataGridViewTextBoxColumn.Name = "originDataGridViewTextBoxColumn";
+            this.originDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // destinationDataGridViewTextBoxColumn
             // 
             this.destinationDataGridViewTextBoxColumn.DataPropertyName = "Destination";
             this.destinationDataGridViewTextBoxColumn.HeaderText = "Destination";
             this.destinationDataGridViewTextBoxColumn.Name = "destinationDataGridViewTextBoxColumn";
+            this.destinationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // departTimeDataGridViewTextBoxColumn
             // 
             this.departTimeDataGridViewTextBoxColumn.DataPropertyName = "DepartTime";
             this.departTimeDataGridViewTextBoxColumn.HeaderText = "DepartTime";
             this.departTimeDataGridViewTextBoxColumn.Name = "departTimeDataGridViewTextBoxColumn";
+            this.departTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // arriveTimeDataGridViewTextBoxColumn
             // 
             this.arriveTimeDataGridViewTextBoxColumn.DataPropertyName = "ArriveTime";
             this.arriveTimeDataGridViewTextBoxColumn.HeaderText = "ArriveTime";
             this.arriveTimeDataGridViewTextBoxColumn.Name = "arriveTimeDataGridViewTextBoxColumn";
+            this.arriveTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pricesDataGridViewTextBoxColumn
             // 
             this.pricesDataGridViewTextBoxColumn.DataPropertyName = "Prices";
             this.pricesDataGridViewTextBoxColumn.HeaderText = "Prices";
             this.pricesDataGridViewTextBoxColumn.Name = "pricesDataGridViewTextBoxColumn";
+            this.pricesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ReserveMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 430);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.TripGridView);
             this.Name = "ReserveMenu";
             this.Text = "ReserveMenu";
             this.Load += new System.EventHandler(this.ReserveMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.airCraftBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TripGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,7 +149,7 @@
         private AirAsianDataBaseDataSet airAsianDataBaseDataSet;
         private System.Windows.Forms.BindingSource airCraftBindingSource;
         private AirAsianDataBaseDataSetTableAdapters.AirCraftTableAdapter airCraftTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView TripGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn planeCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn originDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationDataGridViewTextBoxColumn;
