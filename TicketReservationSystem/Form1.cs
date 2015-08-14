@@ -13,6 +13,9 @@ namespace TicketReservationSystem
 {
     public partial class CustomerLogin : Form
     {
+        Customer theCust;
+
+
         OleDbConnection AirAsianDataBase;
         OleDbCommand oledbCmd = new OleDbCommand();
         string connectionString =
@@ -61,7 +64,10 @@ namespace TicketReservationSystem
                 int temp = oledbCmd.ExecuteNonQuery();
 
                 if (temp > 0)
+                {
                     MessageBox.Show("Registered successfully!");
+                    formCustClass( name, name,  contactnumber, membership);
+                }
                 else
                     MessageBox.Show("Error occured! Unable to register!");
             }
@@ -70,6 +76,14 @@ namespace TicketReservationSystem
        
 
             AirAsianDataBase.Close();                // close the connection to the database
+        }
+
+        private void formCustClass(string name, string id, string contact, string memberShip)
+        {
+            if (memberShip.Equals("Member"))
+                theCust = new Member(name, id, contact, memberShip);
+            else
+                theCust = new Regular(name, id, contact, memberShip);
         }
 
 
@@ -93,9 +107,10 @@ namespace TicketReservationSystem
             da.Fill(dataTable);
             if (dataTable.Rows.Count > 0)
             {
-               
+                MessageBox.Show("Welcome " + txtCustName.Text + " !");
                 this.Hide(); 
                 ReserveMenu r = new ReserveMenu(txtCustName.Text);
+                //ReserveMenu r = new ReserveMenu(theCust);  actually should use this one
                 r.ShowDialog();
             }
             else MessageBox.Show("Login Fail, please try again!");

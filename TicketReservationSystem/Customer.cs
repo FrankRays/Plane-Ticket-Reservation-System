@@ -10,7 +10,7 @@ namespace TicketReservationSystem
     {
         protected Reservation[] reserveList = new Reservation[4];
         protected string name, ID, contact;
-        protected char memberShip; // R : regular, M : member
+        protected string memberShip; // R : regular, M : member
         protected double totalFee;
 
         protected static bool luckyDraw = false; 
@@ -21,7 +21,7 @@ namespace TicketReservationSystem
        
         public Customer() { }
 
-        public Customer(string n, string id, string ct, char ms)
+        public Customer(string n, string id, string ct, string ms)
         { 
             setName(n);
             setID(id);
@@ -44,9 +44,9 @@ namespace TicketReservationSystem
         public string getContact()
         { return this.contact; }
 
-        public void setMemberShip(char memberShip)
+        public void setMemberShip(string memberShip)
         { this.memberShip = memberShip; }
-        public char getMemberShip()
+        public string getMemberShip()
         { return this.memberShip; }
 
         public abstract void addReserveList(Reservation reserve);

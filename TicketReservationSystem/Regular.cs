@@ -10,7 +10,7 @@ namespace TicketReservationSystem
     {
         public Regular() { }
 
-        public Regular(string name, string id, string contact, char memberShip)
+        public Regular(string name, string id, string contact, string memberShip)
             : base(name, id, contact, memberShip)
         { }
 

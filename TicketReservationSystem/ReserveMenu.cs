@@ -19,24 +19,23 @@ namespace TicketReservationSystem
         string connectionString =
         @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Ray\Desktop\Plane-Ticket-Reservation-System\AirAsianDataBase.mdb";
 
+        Customer theCust;
         string custName;
         string tripType = "Single";
         int numOfSeat =1;
         double charges;
 
 
-        public ReserveMenu(string name)
+        public ReserveMenu(string n)
         {
-            custName = name;
+            custName = n;
             InitializeComponent();
         }
 
         private void ReserveMenu_Load(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Welcome " + this.custName + " !");
-
-
+     
             AirAsianDataBase = new OleDbConnection(connectionString);
 
             AirAsianDataBase.Open();
@@ -108,6 +107,7 @@ namespace TicketReservationSystem
 
             AirCraft custCraft = new AirCraft(planeCode, origin, dest, depTime, arrTime, prices);
             Trips custTrip = new Trips(custCraft, numOfSeat);
+            Reservation custReserve = new Reservation(custTrip, theCust, tripType);
 
         }
 
