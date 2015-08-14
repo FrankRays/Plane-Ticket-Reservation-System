@@ -33,5 +33,16 @@ namespace TicketReservationSystem.Properties {
                 return ((string)(this["AirAsianDataBaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\\Users\\Ray\\Desktop\\Plane-Ticket-Re" +
+            "servation-System\\AirAsianDataBase.mdb")]
+        public string AirAsianDataBaseConnectionString1 {
+            get {
+                return ((string)(this["AirAsianDataBaseConnectionString1"]));
+            }
+        }
     }
 }
