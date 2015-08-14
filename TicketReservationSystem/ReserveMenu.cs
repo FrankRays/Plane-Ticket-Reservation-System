@@ -20,6 +20,10 @@ namespace TicketReservationSystem
         @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Ray\Desktop\Plane-Ticket-Reservation-System\AirAsianDataBase.mdb";
 
         string custName;
+        string tripType = "Single";
+        int numOfSeat =1;
+        double charges;
+
 
         public ReserveMenu(string name)
         {
@@ -79,5 +83,33 @@ namespace TicketReservationSystem
             }
 
         }
+
+        private void ComboNumTicket_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            numOfSeat = Convert.ToInt32(ComboNumTicket.SelectedItem.ToString());
+            charges = Convert.ToDouble(txtPrices.Text) * numOfSeat;
+            txtCharges.Text = charges.ToString();
+        }
+
+   
+        private void comboTripType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tripType = comboTripType.SelectedItem.ToString();
+        }
+
+        private void btnBuyTrip_Click(object sender, EventArgs e)
+        {
+            string planeCode = txtPlaneCode.Text;
+            string origin = txtOrigin.Text;
+            string dest = txtDest.Text;
+            string depTime = txtDepTime.Text;
+            string arrTime = txtArrTime.Text;
+            double prices = Convert.ToDouble(txtPrices.Text);
+
+            AirCraft custCraft = new AirCraft(planeCode, origin, dest, depTime, arrTime, prices);
+            Trips custTrip = new Trips(custCraft, numOfSeat);
+
+        }
+
     }
 }

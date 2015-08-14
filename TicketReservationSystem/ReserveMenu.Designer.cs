@@ -52,6 +52,13 @@
             this.txtDepTime = new System.Windows.Forms.TextBox();
             this.txtArrTime = new System.Windows.Forms.TextBox();
             this.txtPrices = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ComboNumTicket = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtCharges = new System.Windows.Forms.TextBox();
+            this.btnBuyTrip = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboTripType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.airCraftBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airAsianDataBaseDataSet)).BeginInit();
@@ -196,6 +203,7 @@
             // 
             // txtPlaneCode
             // 
+            this.txtPlaneCode.Enabled = false;
             this.txtPlaneCode.Location = new System.Drawing.Point(127, 180);
             this.txtPlaneCode.Name = "txtPlaneCode";
             this.txtPlaneCode.Size = new System.Drawing.Size(100, 20);
@@ -203,6 +211,7 @@
             // 
             // txtOrigin
             // 
+            this.txtOrigin.Enabled = false;
             this.txtOrigin.Location = new System.Drawing.Point(127, 215);
             this.txtOrigin.Name = "txtOrigin";
             this.txtOrigin.Size = new System.Drawing.Size(100, 20);
@@ -210,6 +219,7 @@
             // 
             // txtDest
             // 
+            this.txtDest.Enabled = false;
             this.txtDest.Location = new System.Drawing.Point(127, 242);
             this.txtDest.Name = "txtDest";
             this.txtDest.Size = new System.Drawing.Size(100, 20);
@@ -217,6 +227,7 @@
             // 
             // txtDepTime
             // 
+            this.txtDepTime.Enabled = false;
             this.txtDepTime.Location = new System.Drawing.Point(127, 271);
             this.txtDepTime.Name = "txtDepTime";
             this.txtDepTime.Size = new System.Drawing.Size(100, 20);
@@ -224,6 +235,7 @@
             // 
             // txtArrTime
             // 
+            this.txtArrTime.Enabled = false;
             this.txtArrTime.Location = new System.Drawing.Point(127, 300);
             this.txtArrTime.Name = "txtArrTime";
             this.txtArrTime.Size = new System.Drawing.Size(100, 20);
@@ -231,16 +243,95 @@
             // 
             // txtPrices
             // 
+            this.txtPrices.Enabled = false;
             this.txtPrices.Location = new System.Drawing.Point(127, 331);
             this.txtPrices.Name = "txtPrices";
             this.txtPrices.Size = new System.Drawing.Size(100, 20);
             this.txtPrices.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(376, 188);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(132, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "How many seat you want?";
+            // 
+            // ComboNumTicket
+            // 
+            this.ComboNumTicket.FormattingEnabled = true;
+            this.ComboNumTicket.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.ComboNumTicket.Location = new System.Drawing.Point(514, 188);
+            this.ComboNumTicket.Name = "ComboNumTicket";
+            this.ComboNumTicket.Size = new System.Drawing.Size(121, 21);
+            this.ComboNumTicket.TabIndex = 15;
+            this.ComboNumTicket.SelectedIndexChanged += new System.EventHandler(this.ComboNumTicket_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(447, 222);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Charges";
+            // 
+            // txtCharges
+            // 
+            this.txtCharges.Enabled = false;
+            this.txtCharges.Location = new System.Drawing.Point(514, 215);
+            this.txtCharges.Name = "txtCharges";
+            this.txtCharges.Size = new System.Drawing.Size(121, 20);
+            this.txtCharges.TabIndex = 17;
+            // 
+            // btnBuyTrip
+            // 
+            this.btnBuyTrip.Location = new System.Drawing.Point(514, 280);
+            this.btnBuyTrip.Name = "btnBuyTrip";
+            this.btnBuyTrip.Size = new System.Drawing.Size(75, 23);
+            this.btnBuyTrip.TabIndex = 18;
+            this.btnBuyTrip.Text = "Buy";
+            this.btnBuyTrip.UseVisualStyleBackColor = true;
+            this.btnBuyTrip.Click += new System.EventHandler(this.btnBuyTrip_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(380, 250);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(128, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "SingleTrip or Return Trip?";
+            // 
+            // comboTripType
+            // 
+            this.comboTripType.FormattingEnabled = true;
+            this.comboTripType.Items.AddRange(new object[] {
+            "single",
+            "return"});
+            this.comboTripType.Location = new System.Drawing.Point(514, 244);
+            this.comboTripType.Name = "comboTripType";
+            this.comboTripType.Size = new System.Drawing.Size(121, 21);
+            this.comboTripType.TabIndex = 20;
+            this.comboTripType.SelectedIndexChanged += new System.EventHandler(this.comboTripType_SelectedIndexChanged);
             // 
             // ReserveMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(855, 430);
+            this.Controls.Add(this.comboTripType);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.btnBuyTrip);
+            this.Controls.Add(this.txtCharges);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.ComboNumTicket);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPrices);
             this.Controls.Add(this.txtArrTime);
             this.Controls.Add(this.txtDepTime);
@@ -290,5 +381,12 @@
         private System.Windows.Forms.TextBox txtDepTime;
         private System.Windows.Forms.TextBox txtArrTime;
         private System.Windows.Forms.TextBox txtPrices;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox ComboNumTicket;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCharges;
+        private System.Windows.Forms.Button btnBuyTrip;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboTripType;
     }
 }

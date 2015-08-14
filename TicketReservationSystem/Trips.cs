@@ -10,18 +10,28 @@ namespace TicketReservationSystem
     {
         protected AirCraft craft;
         protected SeatInfo[] seatlist = new SeatInfo[4];
+        protected int numOfSeat;
+        protected double tripFee; 
       
         public Trips(){ }
-        public Trips(AirCraft cra, SeatInfo s) 
+        public Trips(AirCraft cra, int n) 
         {
             setCraft(cra);
-            addSeatList(s);
+            setSeats( n);
         }
 
         public void setCraft(AirCraft craft)
         { this.craft = craft; }
         public AirCraft getCraft()
         { return this.craft; }
+
+        public void setSeats(int numOfSeat)
+        { this.numOfSeat = numOfSeat; }
+        public int getSeats()
+        { return this.numOfSeat; }
+
+
+
 
         public void addSeatList(SeatInfo seat)
         {
@@ -35,15 +45,17 @@ namespace TicketReservationSystem
 
         public double getTotalCharge()
         {
-            double charge = craft.getPrices();
+            double tripFee = craft.getPrices();
             int count = 0;
 
             for (int i = 0; i < 4; i++){
                 if (seatlist[i] != null)
                     count++;
-            }
+            } 
 
-            return charge * count;
+            tripFee *= count;
+
+            return tripFee;
         }
     }
 }

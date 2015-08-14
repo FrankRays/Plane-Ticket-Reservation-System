@@ -12,7 +12,7 @@ namespace TicketReservationSystem
         protected double prices = 0;
 
         public AirCraft() { }
-        public AirCraft(string code, string ori, string des, string dTime, string ATime,double prices) 
+        public AirCraft(string code, string ori, string des, string dTime, string ATime, double prices) 
         { 
             setPlaneCode(code);
             setOrigin(ori);

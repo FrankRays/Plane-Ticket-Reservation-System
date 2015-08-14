@@ -11,6 +11,7 @@ namespace TicketReservationSystem
         protected Trips trip = new Trips();
         protected string TripType; // single :  singleTrip ,return : return Trip
         protected Customer customer;
+        protected double reserveFee;
         public Reservation() { }
         public Reservation(Trips t, Customer cust, string type)
         {
@@ -34,11 +35,11 @@ namespace TicketReservationSystem
         { TripType = type; }
         public double calFee()
         {
-            double fee = trip.getTotalCharge();
+            reserveFee = trip.getTotalCharge();
 
             if (TripType.Equals("return"))
-                return fee * 2;
-            else return fee;
+                return reserveFee * 2;
+            else return reserveFee;
         }
     }
 }

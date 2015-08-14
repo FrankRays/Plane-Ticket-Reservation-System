@@ -93,9 +93,8 @@ namespace TicketReservationSystem
             da.Fill(dataTable);
             if (dataTable.Rows.Count > 0)
             {
-                MessageBox.Show("Welcome");
-                this.Hide();
-                 
+               
+                this.Hide(); 
                 ReserveMenu r = new ReserveMenu(txtCustName.Text);
                 r.ShowDialog();
             }
