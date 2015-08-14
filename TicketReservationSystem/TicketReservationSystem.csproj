@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirAsianDataBaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AirAsianDataBaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AirCraft.cs" />
     <Compile Include="Bonus.cs" />
     <Compile Include="Customer.cs" />
@@ -58,6 +63,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regular.cs" />
     <Compile Include="Reservation.cs" />
+    <Compile Include="ReserveMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReserveMenu.Designer.cs">
+      <DependentUpon>ReserveMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sale.cs" />
     <Compile Include="SeatInfo.cs" />
     <Compile Include="Trips.cs" />
@@ -73,6 +84,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReserveMenu.resx">
+      <DependentUpon>ReserveMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AirAsianDataBaseDataSet.xsc">
+      <DependentUpon>AirAsianDataBaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AirAsianDataBaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AirAsianDataBaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AirAsianDataBaseDataSet.xss">
+      <DependentUpon>AirAsianDataBaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +110,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AirAsianDataBase.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
